@@ -1,2 +1,2 @@
 # ASCII-Explorer
-A simple tech demo made in C++ to test a ASCII text game
+A simple game to test ASCII movement and rendering in C++
