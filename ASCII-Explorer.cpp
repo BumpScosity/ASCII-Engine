@@ -105,6 +105,12 @@ int main() {
 					Move = false;
 				}
 			}
+			else {
+				std::cout << "Error: " << Input << " not defined" << std::endl;
+				Input = 0;
+				Played = false;
+				Move = false;
+			}
 		}
 
 		// Changing the text
