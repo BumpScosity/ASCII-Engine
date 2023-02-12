@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <cstdlib>
 #include <conio.h>
 
@@ -11,6 +11,7 @@ auto Played = false;
 auto Display = false;
 auto Move = false;
 auto Handle = false;
+auto Win = false;
 
 // Defining X and Y positons
 
@@ -19,32 +20,31 @@ int Y = 0;
 
 // Defining the lines
 
-auto Line1 = "3333333333"; 
-auto Line2 = "3[]1111113";
-auto Line3 = "3111111113";
-auto Line4 = "3111111113";
-auto Line5 = "3111111113";
-auto Line6 = "3333333333";
-
+auto Line1 = "::::::::::"; 
+auto Line2 = "[]      ";
+auto Line3 = "        ";
+auto Line4 = "        ";
+auto Line5 = "        ";
+auto Line6 = "::::::::::";
 
 
 int main() {
 
 	// Starting the game
 
-	std::cout << "3 = Wall, [] = Player, 1 = Background." << std::endl;
+	std::cout << "3 = Wall, [] = Player, {} = End, 1 = Background." << std::endl;
 	std::cout << "W to move up, S to move down, A to move left, D to might rigt." << std::endl << std::endl;
 
 	std::cout << Line1 << std::endl;
-	std::cout << Line2 << std::endl;
-	std::cout << Line3 << std::endl;
-	std::cout << Line4 << std::endl;
-	std::cout << Line5 << std::endl;
+	std::cout << ":" << Line2 << ":" << std::endl;
+	std::cout << ":" << Line3 << ":" << std::endl;
+	std::cout << ":" << Line4 << ":" << std::endl;
+	std::cout << ":" << Line5 << ":" << std::endl;
 	std::cout << Line6 << std::endl;
 
 	// Detecting key presses
 
-	while (true) {
+	while (!Win) {
 		if (!Played) {
 			Input = _getch();
 			if (Input != 0) {
@@ -112,136 +112,136 @@ int main() {
 		else if (Handle) {
 			if (X == 0) {
 				if (Y == 0) {
-					Line2 = "3[]1111113";
-					Line3 = "3111111113";
-					Line4 = "3111111113";
-					Line5 = "3111111113";
+					Line2 = "[]      ";
+					Line3 = "        ";
+					Line4 = "        ";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y == 1) {
-					Line2 = "3111111113";
-					Line3 = "3[]1111113";
-					Line4 = "3111111113";
-					Line5 = "3111111113";
+					Line2 = "        ";
+					Line3 = "[]      ";
+					Line4 = "        ";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y ==  2) {
-					Line2 = "3111111113";
-					Line3 = "3111111113";
-					Line4 = "3[]1111113";
-					Line5 = "3111111113";
+					Line2 = "        ";
+					Line3 = "        ";
+					Line4 = "[]      ";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y == 3) {
-					Line2 = "3111111113";
-					Line3 = "3111111113";
-					Line4 = "3111111113";
-					Line5 = "3[]1111113";
+					Line2 = "        ";
+					Line3 = "        ";
+					Line4 = "        ";
+					Line5 = "[]      ";
 					Display = true;
 					Handle = false;
 				}
 			}
 			else if (X == 1) {
 				if (Y == 0) {
-					Line2 = "311[]11113";
-					Line3 = "3111111113";
-					Line4 = "3111111113";
-					Line5 = "3111111113";
+					Line2 = "  []    ";
+					Line3 = "        ";
+					Line4 = "        ";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y == 1) {
-					Line2 = "3111111113";
-					Line3 = "311[]11113";
-					Line4 = "3111111113";
-					Line5 = "3111111113";
+					Line2 = "        ";
+					Line3 = "  []    ";
+					Line4 = "        ";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y == 2) {
-					Line2 = "3111111113";
-					Line3 = "3111111113";
-					Line4 = "311[]11113";
-					Line5 = "3111111113";
+					Line2 = "        ";
+					Line3 = "        ";
+					Line4 = "  []    ";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y == 3) {
-					Line2 = "3111111113";
-					Line3 = "3111111113";
-					Line4 = "3111111113";
-					Line5 = "311[]11113";
+					Line2 = "        ";
+					Line3 = "        ";
+					Line4 = "        ";
+					Line5 = "  []    ";
 					Display = true;
 					Handle = false;
 				}
 			}
 			if (X == 2) {
 				if (Y == 0) {
-					Line2 = "31111[]113";
-					Line3 = "3111111113";
-					Line4 = "3111111113";
-					Line5 = "3111111113";
+					Line2 = "    []  ";
+					Line3 = "        ";
+					Line4 = "        ";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y == 1) {
-					Line2 = "3111111113";
-					Line3 = "31111[]113";
-					Line4 = "3111111113";
-					Line5 = "3111111113";
+					Line2 = "        ";
+					Line3 = "    []  ";
+					Line4 = "        ";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y == 2) {
-					Line2 = "3111111113";
-					Line3 = "3111111113";
-					Line4 = "31111[]113";
-					Line5 = "3111111113";
+					Line2 = "        ";
+					Line3 = "        ";
+					Line4 = "    []  ";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y == 3) {
-					Line2 = "3111111113";
-					Line3 = "3111111113";
-					Line4 = "3111111113";
-					Line5 = "31111[]113";
+					Line2 = "        ";
+					Line3 = "        ";
+					Line4 = "        ";
+					Line5 = "    []  ";
 					Display = true;
 					Handle = false;
 				}
 			}
 			else if (X == 3) {
 				if (Y == 0) {
-					Line2 = "3111111[]3";
-					Line3 = "3111111113";
-					Line4 = "3111111113";
-					Line5 = "3111111113";
+					Line2 = "      []";
+					Line3 = "        ";
+					Line4 = "        ";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y == 1) {
-					Line2 = "3111111113";
-					Line3 = "3111111[]3";
-					Line4 = "3111111113";
-					Line5 = "3111111113";
+					Line2 = "        ";
+					Line3 = "      []";
+					Line4 = "        ";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y == 2) {
-					Line2 = "3111111113";
-					Line3 = "3111111113";
-					Line4 = "3111111[]3";
-					Line5 = "3111111113";
+					Line2 = "        ";
+					Line3 = "        ";
+					Line4 = "      []";
+					Line5 = "        ";
 					Display = true;
 					Handle = false;
 				}
 				else if (Y == 3) {
-					Line2 = "3111111113";
-					Line3 = "3111111113";
-					Line4 = "3111111113";
-					Line5 = "3111111[]3";
+					Line2 = "        ";
+					Line3 = "        ";
+					Line4 = "        ";
+					Line5 = "      []";
 					Display = true;
 					Handle = false;
 				}
@@ -253,10 +253,10 @@ int main() {
 		else if (Display) {
 			system("cls");
 			std::cout << Line1 << std::endl;
-			std::cout << Line2 << std::endl;
-			std::cout << Line3 << std::endl;
-			std::cout << Line4 << std::endl;
-			std::cout << Line5 << std::endl;
+			std::cout << ":" << Line2 << ":" << std::endl;
+			std::cout << ":" << Line3 << ":" << std::endl;
+			std::cout << ":" << Line4 << ":" << std::endl;
+			std::cout << ":" << Line5 << ":" << std::endl;
 			std::cout << Line6 << std::endl;
 			Played = false;
 			Display = false;
