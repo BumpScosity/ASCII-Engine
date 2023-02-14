@@ -1,2 +1,2 @@
-# ASCII-Explorer
-A simple game to test ASCII movement and rendering in C++
+# ASCII-Engine
+A simple 2D engine using ASCII characters made in C++ in a week for learning.
