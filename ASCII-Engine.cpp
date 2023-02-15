@@ -3,31 +3,42 @@
 #include <vector> // Includeing vectors for creating the gameboard
 
 // Variables
-int PlayerX = 2;
+int PlayerX = 3;
 int PlayerY = 1;
 char input = 1;
 bool Run = true;
 
-// The gameboard itself
+// Here is the game board, feel free to edit it by following these rules. (:
+// Rule 1: all ':' are walls
+// Rule 2: anything that is not a ':' will be counted as a empty space and will have to be coded it
+// Rule 3: If it is off the grid the player will be able to break out of the gameboard and break the game
 std::vector<std::string> gameBoard = {
-    "::::::::::::::::::::::",
-    ":                    :",
-    ":                    :",
-    ":                    :",
-    ":                    :",
-    ":                    :",
-    ":                    :",
-    ":                    :",
-    ":                    :",
-    ":                    :",
-    "::::::::::::::::::::::"
+    "::::::::::::::::::::::::      ::::::::::::::::::::::::",
+    "::                    ::      ::                    ::",
+    "::                    ::      ::                    ::",     
+    "::                    ::::::::::                    ::",
+    "::                                                  ::",
+    "::                                                  ::",
+    "::                                                  ::",
+    "::                    ::::::::::                    ::",
+    "::                    ::      ::                    ::",
+    "::                    ::      ::                    ::",
+    "::::::::::    ::::::::::      ::::::::::    ::::::::::",
+    "        ::    ::                      ::    ::",
+    "        ::    ::                      ::    ::",
+    "        ::    ::                      ::    ::",
+    "::::::::::    ::::::::::      ::::::::::    ::::::::::",
+    "::                    ::      ::                    ::",
+    "::                    ::      ::                    ::",
+    "::                    ::::::::::                    ::",
+    "::                                                  ::",
+    "::                                                  ::",
+    "::                                                  ::",
+    "::                    ::::::::::                    ::",
+    "::                    ::      ::                    ::",
+    "::                    ::      ::                    ::",
+    "::::::::::::::::::::::::      ::::::::::::::::::::::::"
 };
-
-// This a function so you can change what it does
-void Win() {
-    std::cout << std::endl << std::endl << "Congratulations you won!" << std::endl;
-    Run = false;
-}
 
 // For displaying the game
 void Display(std::vector<std::string>& gameBoard) {
