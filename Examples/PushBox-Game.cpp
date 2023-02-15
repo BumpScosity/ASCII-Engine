@@ -30,7 +30,7 @@ std::vector<std::string> gameBoard = {
 
 // This a function so you can change what it does
 void Win() {
-    std::cout << std::endl << std::endl << "Congratulations you won!";
+    std::cout << std::endl << std::endl << "Congratulations you won!" << std::endl;
     Run = false;
 }
 
